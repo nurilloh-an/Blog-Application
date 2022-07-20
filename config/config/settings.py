@@ -70,7 +70,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'alharamin1004@gmail.com'
+EMAIL_HOST_PASSWORD = '*******'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+# EMAIL_HOST: The SMTP server host; the default is localhost
+# EMAIL_PORT: The SMTP port; the default is 25
+# EMAIL_HOST_USER: The username for the SMTP server
+# EMAIL_HOST_PASSWORD: The password for the SMTP server
+# EMAIL_USE_TLS: Whether to use a Transport Layer Security (TLS) secure
+# connection
+# EMAIL_USE_SSL: Whether to use an implicit TLS secure connection
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -117,6 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
